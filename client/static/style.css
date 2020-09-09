@@ -1,0 +1,352 @@
+/* body {
+  background: #995DFF;
+  color: white;
+  font-size: calc(10 + (16 - 10) * ((100vw - 1200) / (1900 - 100)));
+} */
+
+html {
+ font-size: calc(10px + (18 - 10) * ((100vw - 600px) / (1800 - 600)));
+ 
+}
+
+.grid-reloaded {
+  position: fixed;
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 10% 3% 3.5% 3.5% 3% 10% 67%;
+  grid-template-rows: 8% 8% 8% 8% 8% 8% 26% 26%;
+  grid-gap: 5px;
+  grid-template-areas: 
+    "instance instance instance instance instance instance viz"
+    "traffic-mode traffic-mode stop stop signout signout viz"
+    "s1 s5 s5 s5 space s9 viz"
+    "s2 s6 s6 s6 space s10 viz"
+    "s4 s8 s8 s8 space s11 viz"
+    "s3 s7 s7 s7 space s12 viz"
+    "nodes-1 nodes-1 nodes-1 nodes-2 nodes-2 nodes-2 viz"
+    "nodes-3 nodes-3 nodes-3 nodes-4 nodes-4 nodes-4 viz"
+    "nodes-3 nodes-3 nodes-3 nodes-4 nodes-4 nodes-4 viz"
+}
+
+svg {
+  background-color: #FFFFFF;
+  display: block;
+  position:fixed; 
+  top: 0; 
+  height:100%; 
+  width:65%;
+}
+
+#spin {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  .spinner {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+@media screen and (max-width: 950px) {
+  
+  .grid-reloaded {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 25% 25% 25% 25% ;
+    grid-template-rows: 90% 10%;
+    grid-gap: 5px;
+    grid-template-areas: 
+      "viz viz viz viz"
+      "s2 traffic-mode signout stop";
+  }
+
+  svg {
+    background-color: #FFFFFF;
+    position: relative !important;
+    display: block;
+    top: 0; 
+    width:100%;
+    padding-left: 0px;
+    margin-left: 0px;
+    padding: auto !important;
+    margin: auto !important;
+    left: -1.1%;
+    
+  }
+ 
+
+  .viz {
+    background-color: #995DFF;
+    top:0; 
+    width: 100%;
+    height:100%; 
+    grid-area: viz;
+  }
+}
+
+.instance {
+  grid-area: instance;
+  color: white !important;
+  font-family: 'Roboto';
+  font-size: 1.2em;
+}
+
+.s1 {
+  grid-area: s1;
+  font-size: 1.2rem;
+  background-color: #5F3A9E !important;
+  color: #ffffff !important;
+}
+
+.s2 {
+  grid-area: s2;
+  background-color: #5F3A9E !important;
+  color: #ffffff !important;
+}
+
+.s3 {
+  grid-area: s3;
+  background-color: #5F3A9E !important;
+  color: #ffffff !important;
+}
+
+.s4 {
+  grid-area: s4;
+  background-color: #5F3A9E !important;
+  color: #ffffff !important;
+}
+
+.s5 {
+  grid-area: s5;
+  background-color: #5F3A9E !important;
+  color: #ffffff !important;
+}
+
+.s6 {
+  grid-area: s6;
+  background-color: #5F3A9E !important;
+  color: #ffffff !important;
+}
+
+.s7{
+  grid-area: s7;
+  background-color: #5F3A9E !important;
+  color: #ffffff !important;
+}
+
+.s8 {
+  grid-area: s8;
+  background-color: #5F3A9E !important;
+  color: #ffffff !important;
+}
+
+#s9 {
+  grid-area: s9;
+}
+
+#s10 {
+  grid-area: s10;
+}
+
+#s11{
+  grid-area: s11;
+}
+
+#s12 {
+  grid-area: s12;
+}
+
+
+.signout {
+  grid-area: signout;
+}
+
+.stop {
+  grid-area: stop;
+}
+
+.roboto {
+  font-family: 'Roboto';
+}
+
+.card-title{
+  font-family: 'Roboto';
+  font-size: .8rem;
+}
+
+.card-content{
+  font-family: 'Roboto';
+  font-size: 1.4rem;
+  padding-top: 2px;
+  text-align: center;
+}
+
+.nodes-1 {
+  grid-area: nodes-1;
+  border-radius: 4px;
+  padding-left: 15px;
+  background-color: #543393;
+  color: #fff;
+  overflow-y: scroll;
+
+}
+
+.nodes-2 {
+  grid-area: nodes-2;
+  border-radius: 4px;
+  padding-left: 15px;
+  background-color: #543393;
+  color: #fff;
+  overflow-y: scroll;
+
+}
+
+.nodes-3 {
+  grid-area: nodes-3;
+  border-radius: 4px;
+  padding-left: 15px;
+  background-color: #543393;
+  color: #fff;
+  overflow-y: scroll;
+
+}
+
+.nodes-4 {
+  grid-area: nodes-4;
+  border-radius: 4px;
+  padding-left: 15px;
+  background-color: #543393;
+  overflow-y: scroll;
+  color: #fff;
+  scrollbar-color: auto;
+
+}
+
+.nonviz {
+  grid-area: nonviz;
+  display: flex;
+  justify-content: space-around;
+  color: #ffffff !important;
+}
+
+
+.settings1 {
+  grid-area: settings1
+}
+
+.cluster {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #DAB2FF;
+}
+
+.login-box {
+  margin: 10% auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  max-width: 20%;
+  max-height: 40%;
+  text-align: center;
+}
+
+.viz {
+  background-color: #995DFF;
+  grid-area: viz;
+  top:0; 
+  left:35%; 
+  height:100%; 
+}
+
+#frontPage{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+
+/* CSS for initial D3 setup: BELOW */
+
+h1 {
+  text-align: center;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font-family: sans-serif;
+  font-size: 11px;
+}
+
+.controls button {
+  display: block;
+  margin: 4em auto 4em auto;
+  background-color: 'aquawhite';
+}
+
+.background {
+  background-color: white !important;
+}
+
+.background-vis {
+  background-color: #995DFF !important;
+}
+
+/* CSS for initial D3 setup: ABOVE */
+
+
+.noDots {
+  font-family: 'Roboto';
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.appName {
+  text-align: center;
+}
+
+.disappear {
+  display: none;
+}
+
+.material-button {
+  min-height: inherit;
+  font-size: .7em;
+}
+.traffic-mode {
+  grid-area: traffic-mode;
+}
+
+.displayError {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hideError {
+  /* margin: auto;
+  display: flex;
+  align-content: center;
+  margin-top: 5px; */
+  display: none;
+}
+
+#errorMessage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
